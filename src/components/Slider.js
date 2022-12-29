@@ -1,32 +1,47 @@
 import { useState } from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import Slide from "./Slide";
 
 const data = [
   {
     id: 1,
-    src: "https://images.pexels.com/photos/4341431/pexels-photo-4341431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-
-    alt: "A Black Camera with Lens",
+    src: "https://i.ibb.co/XszmG02/camera.jpg",
+    headline: "DSLR cameras for stunning photos",
+    body: "Are you an aspiring photographer looking to take your skills to the next level? Our DSLR cameras offer advanced features and high-quality image sensors to help you capture stunning photos. From landscape shots to portraits, these cameras are perfect for capturing all types of subjects.",
+    cta: "Shop DSLR cameras now",
+    category: "cameras",
   },
   {
     id: 2,
-    src: "https://images.pexels.com/photos/4009409/pexels-photo-4009409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Watching tv",
+    src: "https://i.ibb.co/mtc8v16/tv.jpg",
+    headline: "Upgrade your home entertainment with our TVs",
+    body: "Experience the latest in home entertainment with our selection of TVs. From sleek and modern designs to advanced features like 4K resolution and smart capabilities, our TVs will bring your favorite movies, TV shows, and streaming content to life.",
+    cta: "Shop TVs and upgrade now",
+    category: "tvs",
   },
   {
     id: 3,
-    src: "https://images.pexels.com/photos/2323435/pexels-photo-2323435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Photo Of Red And Black Sony Ps4 Dualshock4",
+    src: "https://i.ibb.co/kmr5qQv/headphones.jpg",
+    headline: "Enhance your listening experience",
+    body: "Take your music, movies, and more to the next level with our headphones. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designs for all-day wear.",
+    cta: "Experience enhanced sound",
+    category: "headphones",
   },
   {
     id: 4,
-    src: "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Top View Photo of Black Wireless Headphones",
+    src: "https://i.ibb.co/JqxDhvZ/console.jpg",
+    headline: "Take your gaming to the next level",
+    body: "Elevate your gaming experience with our selection of gaming consoles. From the latest models to classic systems, we have a console for every type of gamer. Our consoles offer advanced graphics, fast processing speeds, and a variety of exclusive games to choose from.",
+    cta: "Shop consoles and play now",
+    category: "consoles",
   },
   {
     id: 5,
-    src: "https://images.pexels.com/photos/23474/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "smart watch",
+    src: "https://i.ibb.co/YbS7mL2/smart-watches.jpg",
+    headline: "Stay connected with smart watches",
+    body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
+    cta: "Connect with a smart watch",
+    category: "smart-watches",
   },
 ];
 
@@ -53,11 +68,7 @@ const Slider = () => {
         style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
       >
         {data.map((image) => (
-          <div
-            className="slide"
-            style={{ backgroundImage: `url(${image.src})` }}
-            key={image.id}
-          ></div>
+          <Slide key={image.id} image={image} />
         ))}
       </div>
 
@@ -65,7 +76,7 @@ const Slider = () => {
       <div className="btns absolute  z-[1] text-teal-50 text-2xl flex gap-10 bottom-20 w-screen justify-center">
         <button
           onClick={prevSlide}
-          className="prev-btn h-10 w-10 text-4xl hover:bg-white/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full"
+          className="prev-btn h-10 w-10 text-4xl hover:bg-teal-100/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full border-2 border-teal-100"
         >
           <span>
             <BsArrowLeftShort />
@@ -73,7 +84,7 @@ const Slider = () => {
         </button>
         <button
           onClick={nextSlide}
-          className="next-btn h-10 w-10 text-4xl hover:bg-white/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full"
+          className="next-btn h-10 w-10 text-4xl hover:bg-teal-100/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full border-2 border-teal-100"
         >
           <span>
             <BsArrowRightShort />
