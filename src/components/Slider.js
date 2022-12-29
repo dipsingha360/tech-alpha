@@ -60,6 +60,8 @@ const Slider = () => {
           ></div>
         ))}
       </div>
+
+      {/* slider buttons */}
       <div className="btns absolute  z-[1] text-teal-50 text-2xl flex gap-10 bottom-20 w-screen justify-center">
         <button
           onClick={prevSlide}
