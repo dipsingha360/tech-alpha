@@ -76,7 +76,7 @@ const Slider = () => {
       <div className="btns absolute  z-[1] text-teal-50 text-2xl flex gap-10 bottom-20 w-screen justify-center">
         <button
           onClick={prevSlide}
-          className="prev-btn h-10 w-10 text-4xl hover:bg-teal-100/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full border-2 border-teal-100"
+          className="prev-btn h-10 w-10 text-4xl hover:bg-teal-100/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full border border-teal-100"
         >
           <span>
             <BsArrowLeftShort />
@@ -84,7 +84,7 @@ const Slider = () => {
         </button>
         <button
           onClick={nextSlide}
-          className="next-btn h-10 w-10 text-4xl hover:bg-teal-100/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full border-2 border-teal-100"
+          className="next-btn h-10 w-10 text-4xl hover:bg-teal-100/70 hover:text-teal-900 duration-300 bg-teal-300/20 backdrop-blur-xl flex justify-center items-center rounded-full border border-teal-100"
         >
           <span>
             <BsArrowRightShort />

@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="navbar-bg  bg-teal-500 text-teal-50 h-20 flex justify-center items-center ">
       <div className="navbar container mx-auto flex items-center justify-between">
         <div className="left">
-          <span className="logo text-xl font-semibold">
+          <span className="logo text-2xl font-semibold">
             tech<span className="text-gray-700">Alpha</span>{" "}
           </span>
         </div>
