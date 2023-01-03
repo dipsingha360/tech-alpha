@@ -17,7 +17,7 @@ export const productFetching = createAsyncThunk(
 );
 
 export const productsSlice = createSlice({
-  naem: "products",
+  name: "products",
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
