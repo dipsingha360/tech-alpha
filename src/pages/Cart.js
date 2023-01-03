@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { currencyFormatter } from "../utilities/currencyFormatter";
+
 const data = [
   {
     id: 1,
@@ -32,33 +35,69 @@ const data = [
 ];
 
 const Cart = () => {
+  // states
+  const [count, setCount] = useState(1);
+
+  // handlers
+  const handleDecrease = () => {
+    setCount((prevCount) => prevCount - 1, []);
+  };
+
+  const handleIncrease = () => {
+    setCount((prevCount) => prevCount + 1, []);
+  };
+
   return (
     <div className="cart-section container mx-auto py-10">
       <h2 className="section-title uppercase text-2xl font-bold space-font text-center mb-10">
         Your cart
       </h2>
       <div className="cart-container">
-        <div className="product-headlines grid grid-cols-5">
+        <div className="product-headlines grid grid-cols-5 gap-10 border-b pb-3 uppercase font-semibold">
           <div className="col-product col-span-2">Product</div>
           <div className="col-unit-price">Unit Price</div>
           <div className="col-quantity">Quantity</div>
           <div className="col-total-price">Total Price</div>
         </div>
-        {data.map((product) => (
-          <div className="product grid grid-cols-5">
-            <div className="left flex col-span-2">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="h-32 h-32 object-cover"
-              />
-              <div className="details">
-                <span>{product.name}</span>
-                <button className="remove-btn">Remove</button>
+        <div className="products flex flex-col">
+          {data.map((product) => (
+            <div className="product grid grid-cols-5 gap-10 mt-5 border-b pb-5">
+              <div className="left flex col-span-2 gap-3">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-32 w-32 object-cover"
+                />
+                <div className="details flex flex-col gap-2 items-start">
+                  <span>{product.name}</span>
+                  <button className="remove-btn uppercase font-medium text-gray-400 hover:text-rose-500 duration-300">
+                    Remove
+                  </button>
+                </div>
+              </div>
+              <div className="unit-price">
+                {currencyFormatter(product.price)}
+              </div>
+              <div className="counter flex">
+                <button
+                  onClick={() => handleDecrease()}
+                  className="h-10 w-10 bg-gray-200 border border-gray-300 active:bg-gray-600 active:text-gray-50"
+                >
+                  -
+                </button>
+                <span className="h-10 w-10 bg-gray-200 flex justify-center items-center border border-gray-300 ">
+                  {count}
+                </span>
+                <button
+                  onClick={() => handleIncrease()}
+                  className="h-10 w-10 bg-gray-200 border  border-gray-300 active:bg-gray-600 active:text-gray-50"
+                >
+                  +
+                </button>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className="cart-lower"></div>
     </div>
