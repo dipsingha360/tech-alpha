@@ -108,7 +108,7 @@ const Cart = () => {
       </div>
 
       <div className="cart-lower flex justify-between items-start py-10">
-        <button className="clear-btn uppercase font-semibold text-teal-700 border py-3 px-8 hover:bg-teal-400  duration-300">
+        <button className="clear-btn uppercase font-semibold text-teal-600 border py-3 px-8 hover:bg-teal-500 hover:text-teal-50  duration-300">
           Clear cart
         </button>
         <div className="flex flex-col items-start gap-3">
