@@ -7,7 +7,7 @@ const Card = ({ product }) => {
 
   // handlers
   const addToCartHandler = (id) => {
-    navigate("./cart");
+    navigate("/cart");
   };
   return (
     <div className="product flex flex-col gap-3 shadow-md bg-white rounded-xl overflow-hidden hover:shadow-xl duration-300">
